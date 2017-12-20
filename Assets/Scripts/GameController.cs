@@ -5,19 +5,17 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
     public int playerTurn; //pub or priv?
     public int numOfPlayers; //pub or priv?
+    public int currentPlayer;
+    private PlayerController pc;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void takeCoin()
+    private void initPlayer(int playerNum)
     {
+        pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
 
+    public void takeCoin(int num, int playerNum)
+    {
+        initPlayer(playerNum);
+        pc.coins = pc.coins + num;
     }
 }

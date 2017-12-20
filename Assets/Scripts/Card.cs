@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour {
+public class Card : MonoBehaviour
+{
 
     public int cardSuit;
     public int cardValue;
 
-    private enum CardSuit {Spades, Hearts, Diamonds, Clubs};
-    private enum CardName {Assassin, Captain, Ambassador, Queen, King};
+    private enum CardSuit { Spades, Hearts, Diamonds, Clubs };
+    private enum CardName { Ace, Ten, Jack, Queen, King };
 
-    private string[] cardLetters = {"A", "10", "J", "Q", "K" };
-    private string[] cardNames = { "Assassin", "Captain", "Ambassador", "Queen", "King"};
+    private string[] cardLetters = { "A", "10", "J", "Q", "K" };
+    private string[] cardNames = { "Assassin", "Captain", "Ambassador", "Contessa", "Duke" };
 
     public void setCardSuit(int cardSuit)
     {
@@ -31,12 +32,6 @@ public class Card : MonoBehaviour {
     public int getCardValue()
     {
         return cardValue;
-    }
-
-    public Card(int suit, int value)
-    {
-        cardSuit = suit;
-        cardValue = value;
     }
 
     public string toString()
